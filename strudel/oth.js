@@ -8,7 +8,8 @@ let PIANOZ = 4
 stack(
   note("[<Eb C Ab:4>]/2").midichan(BASS),
   stack(
-    chord("<Cm7 EbM7 Gm7 EbM7>/2").voicing().transpose(12).layer(x=>x.transpose("<[0,12] 0>/4")),
+    chord("<Cm7 EbM7 Gm7 EbM7>/2").voicing()
+      .transpose(12).layer(x=>x.transpose("<[0,12] 0>/4")),
   ).midichan(PAD),
   stack(
     note(stack(
@@ -18,7 +19,7 @@ stack(
     ).add(36)),
   ).midichan(DRUMZ),
   stack(
-    //note("[<<Bb Eb F> G Ab G>]*2".add(12).late("[0 | 0.1]*2")),
-    //note("[- Eb*2 [- [- C]]]*2".add(12)).clip(0.8),
+    note("[<<~ <Bb Eb F>> G <Ab ~> G>]*2".add(12))
+      .layer(x=>x.transpose("<[0,12] 0>/4"))
   ).midichan(PIANOZ),
 ).midi('IAC Driver')
